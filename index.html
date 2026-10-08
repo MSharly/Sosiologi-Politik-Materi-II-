@@ -1,0 +1,1031 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Website pembelajaran interaktif tentang teori-teori sosiologi politik.">
+  <title>Teori-Teori Sosiologi Politik</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f1e9;
+      --panel: #fffdf9;
+      --panel-strong: #efe4d0;
+      --card: #f8f4ee;
+      --text: #1f2a2a;
+      --muted: #5d645e;
+      --line: rgba(35, 55, 55, 0.16);
+      --primary: #1d4d4f;
+      --primary-soft: #dfece0;
+      --secondary: #b78042;
+      --secondary-soft: #f4e3bf;
+      --accent: #a95f3b;
+      --shadow: 0 18px 45px rgba(22, 32, 30, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(183,128,66,0.10), transparent 30%),
+        linear-gradient(180deg, #f6f1ea 0%, #f9f7f3 35%, #f1eee8 100%);
+      color: var(--text);
+      font-family: "Inter", sans-serif;
+      line-height: 1.7;
+      letter-spacing: 0.01em;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea, select { font: inherit; }
+    .wrap {
+      width: min(1100px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(245, 241, 233, 0.82);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 72px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.76rem;
+      color: var(--primary);
+    }
+    .brand-mark {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--secondary), var(--accent));
+      box-shadow: 0 0 0 4px rgba(183, 128, 66, 0.12);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .nav a {
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+    .nav a:hover {
+      background: rgba(29, 77, 79, 0.06);
+      color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 88px 0 64px;
+      background:
+        radial-gradient(circle at 70% 25%, rgba(183,128,66,0.14), transparent 25%),
+        linear-gradient(135deg, rgba(12,30,30,0.02), rgba(145,120,88,0.04));
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: end;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--secondary);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 42px;
+      height: 1px;
+      background: rgba(183,128,66,0.75);
+    }
+    h1, h2, h3 { font-family: "Cormorant Garamond", serif; line-height: 0.95; margin: 0; }
+    .hero h1 {
+      font-size: clamp(3.7rem, 7vw, 7rem);
+      letter-spacing: -0.05em;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    .hero p.lead {
+      max-width: 620px;
+      margin: 0;
+      font-size: 1.1rem;
+      color: var(--muted);
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 50px;
+      padding: 0 24px;
+      border-radius: 999px;
+      border: 1px solid var(--primary);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .button.primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+    .button.secondary {
+      background: rgba(255,255,255,0.35);
+      color: var(--primary);
+    }
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(110px, 1fr));
+      gap: 14px;
+      margin-top: 32px;
+    }
+    .stat {
+      padding: 18px 16px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255,255,255,0.38);
+      box-shadow: 0 8px 22px rgba(27, 37, 35, 0.04);
+    }
+    .stat strong {
+      display: block;
+      font-size: clamp(1.7rem, 3vw, 2.2rem);
+      font-family: "Cormorant Garamond", serif;
+      color: var(--secondary);
+      line-height: 1;
+    }
+    .stat span {
+      display: block;
+      margin-top: 8px;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .hero-panel {
+      position: relative;
+      padding: 32px;
+      border: 1px solid rgba(183,128,66,0.25);
+      border-radius: 28px;
+      background: linear-gradient(160deg, rgba(255,255,255,0.73), rgba(240,232,218,0.9));
+      box-shadow: var(--shadow);
+    }
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: 16px;
+      border-radius: 20px;
+      border: 1px solid rgba(29, 77, 79, 0.12);
+      pointer-events: none;
+    }
+    .course-badge {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .mini-list {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 0;
+      display: grid;
+      gap: 12px;
+    }
+    .mini-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+    .mini-list li::before {
+      content: "✓";
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(183,128,66,0.12);
+      color: var(--secondary);
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    section {
+      padding: 92px 0;
+    }
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+    .section-head h2 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      color: var(--primary);
+      letter-spacing: -0.04em;
+    }
+    .section-head p {
+      max-width: 530px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 30px;
+    }
+    .feature-card {
+      padding: 24px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.68);
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 25px rgba(25, 35, 34, 0.04);
+    }
+    .feature-card .icon {
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: var(--secondary-soft);
+      color: var(--secondary);
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+    .feature-card h3 {
+      font-size: clamp(2rem, 3vw, 2.5rem);
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .feature-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .theory-wrap {
+      margin-top: 28px;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background: rgba(255,255,255,0.4);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 16px 18px 0;
+    }
+    .tab {
+      border: 1px solid transparent;
+      background: rgba(29,77,79,0.04);
+      color: var(--primary);
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .tab.is-active {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 10px 18px rgba(29,77,79,0.2);
+    }
+    .tab-panel {
+      display: none;
+      padding: 30px 22px 28px;
+    }
+    .tab-panel.is-active {
+      display: block;
+    }
+    .tab-panel-grid {
+      display: grid;
+      grid-template-columns: 1.45fr 0.75fr;
+      gap: 24px;
+    }
+    .tab-panel article {
+      padding: 26px 22px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(255,255,255,0.62);
+    }
+    .tab-panel h3 {
+      font-size: clamp(2.3rem, 4vw, 3.2rem);
+      margin-bottom: 14px;
+      color: var(--primary);
+    }
+    .tab-panel .lead-copy {
+      margin: 0 0 18px;
+      font-size: 1.03rem;
+      color: var(--muted);
+    }
+    .tab-panel ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+    }
+    .tab-panel li + li { margin-top: 8px; }
+    .mini-card {
+      padding: 22px 18px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(29,77,79,0.03), rgba(183,128,66,0.04));
+      border-radius: 22px;
+    }
+    .mini-card h4 {
+      margin: 0 0 10px;
+      color: var(--primary);
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .person-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .person {
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.5);
+      border: 1px solid rgba(29,77,79,0.08);
+    }
+    .person strong {
+      display: block;
+      color: var(--primary);
+      font-size: 1rem;
+    }
+    .person span {
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .comparison {
+      background: linear-gradient(180deg, rgba(29,77,79,0.04), rgba(255,255,255,0));
+    }
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(255,255,255,0.7);
+      box-shadow: var(--shadow);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+    }
+    th, td {
+      padding: 18px 16px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+    }
+    th {
+      background: rgba(29,77,79,0.04);
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      font-size: 0.72rem;
+    }
+    td {
+      color: var(--muted);
+    }
+    td strong {
+      color: var(--text);
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .case-card {
+      position: relative;
+      padding: 22px 18px 20px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.68);
+      overflow: hidden;
+    }
+    .case-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--secondary), var(--primary));
+    }
+    .case-card h3 {
+      font-size: clamp(1.8rem, 2vw, 2.3rem);
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    .case-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .case-card .tag {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .quiz-box {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 24px;
+      align-items: start;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: linear-gradient(140deg, rgba(255,255,255,0.75), rgba(233,239,235,0.7));
+      box-shadow: var(--shadow);
+    }
+    .quiz-box h3 {
+      font-size: clamp(2.5rem, 4vw, 3.6rem);
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+    .quiz-box p { color: var(--muted); }
+    .quiz-questions {
+      display: grid;
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .quiz-option {
+      width: 100%;
+      text-align: left;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.64);
+      border-radius: 16px;
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .quiz-option:hover {
+      border-color: rgba(29,77,79,0.35);
+      transform: translateY(-1px);
+    }
+    .quiz-option.correct {
+      background: rgba(34, 139, 94, 0.12);
+      border-color: rgba(34, 139, 94, 0.5);
+      color: #135a44;
+    }
+    .quiz-option.wrong {
+      background: rgba(169,95,59,0.08);
+      border-color: rgba(169,95,59,0.4);
+      color: #7e4325;
+    }
+    .quiz-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .quiz-score {
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .quiz-feedback {
+      min-height: 26px;
+      margin-top: 12px;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    .result-card {
+      padding: 20px 20px 10px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(183,128,66,0.1), rgba(255,255,255,0.4));
+      border: 1px solid rgba(183,128,66,0.3);
+    }
+    .result-card p {
+      margin: 0;
+    }
+    .result-card strong {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--primary);
+      font-size: 1.3rem;
+    }
+    .resource-list {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 0;
+      display: grid;
+      gap: 12px;
+    }
+    .resource-list li {
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.5);
+      border: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    .summary {
+      padding-top: 5px;
+    }
+    .summary-box {
+      padding: 26px 24px;
+      border-radius: 26px;
+      background: linear-gradient(145deg, rgba(29,77,79,0.98), rgba(18,51,53,0.96));
+      color: rgba(255,255,255,0.88);
+      box-shadow: var(--shadow);
+    }
+    .summary-box h3 {
+      font-size: clamp(2.3rem, 4vw, 3.4rem);
+      margin-bottom: 16px;
+      color: #fff;
+    }
+    .summary-box p {
+      margin: 0;
+      max-width: 780px;
+      font-size: 1.02rem;
+      color: rgba(255,255,255,0.8);
+    }
+
+    footer {
+      padding: 24px 0 50px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .tab-panel-grid,
+      .quiz-box {
+        grid-template-columns: 1fr;
+      }
+      .overview-grid,
+      .case-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .section-head {
+        display: block;
+      }
+      .section-head p {
+        margin-top: 12px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .topbar-inner {
+        flex-direction: column;
+        justify-content: center;
+        padding: 12px 0;
+      }
+      .nav {
+        justify-content: center;
+      }
+      .hero {
+        padding-top: 70px;
+      }
+      .stats,
+      .overview-grid,
+      .case-grid {
+        grid-template-columns: 1fr;
+      }
+      .button {
+        width: 100%;
+      }
+      .hero-actions {
+        flex-direction: column;
+      }
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        Sosiologi Politik
+      </div>
+      <nav class="nav" aria-label="Navigasi utama">
+        <a href="#overview">Overview</a>
+        <a href="#teori">Teori</a>
+        <a href="#perbandingan">Perbandingan</a>
+        <a href="#hubungan">Hubungan</a>
+        <a href="#pemahaman">Pemahaman</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Mata Kuliah</div>
+          <h1>Teori-Teori<br>Sosiologi Politik</h1>
+          <p class="lead">Memahami masyarakat, kekuasaan, dan dinamika politik melalui pendekatan fungsionalisme, konflik, interaksionisme simbolik, dan postkolonial.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#teori">Mulai Belajar</a>
+            <a class="button secondary" href="#latihan">Latihan Mandiri</a>
+          </div>
+
+          <div class="stats" aria-label="Ringkasan materi">
+            <div class="stat">
+              <strong>4</strong>
+              <span>Teori utama</span>
+            </div>
+            <div class="stat">
+              <strong>6</strong>
+              <span>Persoalan politik</span>
+            </div>
+            <div class="stat">
+              <strong>1</strong>
+              <span>Tujuan utama</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="Peta materi">
+          <span class="course-badge">Peta konsep</span>
+          <ul class="mini-list">
+            <li>Teori fungsionalisme melihat masyarakat sebagai sistem yang bekerja secara teratur.</li>
+            <li>Teori konflik menyoroti ketimpangan kekuasaan dan pemikiran kelas.</li>
+            <li>Interaksionisme simbolik menekankan makna politik dalam komunikasi sosial.</li>
+            <li>Teori postkolonial mengkritisi warisan kolonial dalam kehidupan politik modern.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="overview">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Tujuan pembelajaran</h2>
+          <p>Setelah mempelajari materi ini, mahasiswa diharapkan mampu menjelaskan berbagai teori sosial-politik dan menganalisis fenomena politik dari perspektif yang beragam.</p>
+        </div>
+
+        <div class="overview-grid">
+          <article class="feature-card">
+            <div class="icon">01</div>
+            <h3>Teori</h3>
+            <p>Memahami asumsi dasar dan tokoh penting dari setiap perspektif dalam sosiologi politik.</p>
+          </article>
+          <article class="feature-card">
+            <div class="icon">02</div>
+            <h3>Konflik</h3>
+            <p>Mengidentifikasi sumber kekuasaan, dominasi, dan pertentangan antarkelompok dalam masyarakat.</p>
+          </article>
+          <article class="feature-card">
+            <div class="icon">03</div>
+            <h3>Makna</h3>
+            <p>Menjelaskan bagaimana simbol, identitas, dan komunikasi membentuk perilaku politik.</p>
+          </article>
+          <article class="feature-card">
+            <div class="icon">04</div>
+            <h3>Warisan</h3>
+            <p>Menilai dampak kolonialisme terhadap struktur, identitas, dan kekuasaan negara pascakolonial.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="teori">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Perspektif utama</h2>
+          <p>Empat teori ini saling melengkapi dalam menjelaskan fenomena politik, mulai dari keteraturan masyarakat hingga konflik dan warisan kekuasaan.</p>
+        </div>
+
+        <div class="theory-wrap">
+          <div class="tabs" role="tablist" aria-label="Teori utama">
+            <button class="tab is-active" type="button" role="tab" aria-selected="true" data-target="fungsionalisme">Fungsionalisme</button>
+            <button class="tab" type="button" role="tab" aria-selected="false" data-target="konflik">Konflik</button>
+            <button class="tab" type="button" role="tab" aria-selected="false" data-target="simbolik">Interaksionisme Simbolik</button>
+            <button class="tab" type="button" role="tab" aria-selected="false" data-target="postkolonial">Postkolonial</button>
+          </div>
+
+          <div class="tab-panel is-active" id="fungsionalisme" role="tabpanel">
+            <div class="tab-panel-grid">
+              <article>
+                <h3>Fungsionalisme</h3>
+                <p class="lead-copy">Teori fungsionalisme merupakan salah satu perspektif penting dalam sosiologi yang memandang masyarakat sebagai sistem yang terdiri atas berbagai bagian yang saling berhubungan dan saling membutuhkan. Setiap bagian masyarakat memiliki fungsi tertentu untuk mempertahankan keberlangsungan, keteraturan, dan stabilitas sistem sosial.</p>
+                <ul>
+                  <li>Akar pemikiran fungsionalisme dapat ditemukan dalam pemikiran Auguste Comte, Herbert Spencer, dan Émile Durkheim, lalu dikembangkan secara lebih sistematis oleh Talcott Parsons dan Robert K. Merton.</li>
+                  <li>Analogi yang sering digunakan adalah organisme biologis. Mirip dengan tubuh manusia yang memiliki jantung, paru-paru, otak, dan organ lainnya dengan fungsi berbeda tetapi saling bergantung, masyarakat juga memiliki lembaga seperti keluarga, pendidikan, ekonomi, agama, dan politik.</li>
+                  <li>Dalam perspektif sosiologi politik, negara, pemerintah, partai politik, lembaga legislatif, birokrasi, kelompok kepentingan, dan masyarakat sipil dapat dipahami sebagai bagian dari sistem politik yang memiliki fungsi tertentu.</li>
+                  <li>Perspektif ini melihat masyarakat sebagai kesatuan yang relatif teratur, di mana norma, nilai, lembaga sosial, dan peran sosial bekerja bersama untuk mempertahankan keteraturan.</li>
+                </ul>
+              </article>
+              <aside class="mini-card">
+                <h4>Tokoh inti</h4>
+                <div class="person-list">
+                  <div class="person"><strong>Auguste Comte</strong><span>Pemikiran dasar sosiologi sebagai sistem sosial</span></div>
+                  <div class="person"><strong>Herbert Spencer</strong><span>Masyarakat seperti organisme hidup</span></div>
+                  <div class="person"><strong>Émile Durkheim</strong><span>Solidaritas mekanik dan organik</span></div>
+                  <div class="person"><strong>Talcott Parsons</strong><span>Skema AGIL: Adaptation, Goal Attainment, Integration, Latency</span></div>
+                  <div class="person"><strong>Robert K. Merton</strong><span>Fungsi manifes, laten, dan disfungsi</span></div>
+                </div>
+              </aside>
+            </div>
+          </div>
+
+          <div class="tab-panel" id="konflik" role="tabpanel">
+            <div class="tab-panel-grid">
+              <article>
+                <h3>Teori Konflik</h3>
+                <p class="lead-copy">Teori konflik merupakan perspektif yang melihat masyarakat bukan terutama sebagai sistem yang harmonis, tetapi sebagai arena di dalamnya terdapat perbedaan kepentingan, ketimpangan kekuasaan, persaingan sumber daya, dan pertentangan antarkelompok. Konflik dapat terjadi karena adanya perbedaan kepentingan ekonomi, politik, sosial, budaya, nilai, maupun kekuasaan.</p>
+                <ul>
+                  <li>Karl Marx menempatkan konflik kelas sebagai aspek sentral dalam memahami masyarakat. Dalam masyarakat kapitalis terdapat dua kelas utama, yaitu borjuis sebagai pemilik alat produksi dan proletar sebagai kelas pekerja yang menjual tenaga kerjanya.</li>
+                  <li>Menurut perspektif Marx, ketimpangan penguasaan sumber daya ekonomi menciptakan hubungan kekuasaan yang tidak seimbang. Dalam konteks politik, kekuasaan politik tidak dapat dilepaskan dari struktur ekonomi dan kepentingan kelas.</li>
+                  <li>Ralf Dahrendorf mengembangkan teori konflik dengan mengkritik pandangan Marx yang terlalu menekankan kepemilikan alat produksi. Ia menegaskan bahwa konflik juga muncul karena ketimpangan otoritas, di mana terdapat pihak yang memiliki kewenangan dan pihak yang berada di bawah kewenangan.</li>
+                  <li>Lewis A. Coser menekankan bahwa konflik tidak selalu menghasilkan kehancuran. Dalam kondisi tertentu, konflik dapat memperkuat solidaritas kelompok, memperjelas identitas kelompok, memperkuat batas kelompok, menjadi mekanisme perubahan sosial, dan membantu menyalurkan ketegangan.</li>
+                  <li>Dalam sosiologi politik, konflik menjadi konsep penting karena politik berkaitan dengan perebutan, penggunaan, distribusi, dan legitimasi kekuasaan.</li>
+                </ul>
+              </article>
+              <aside class="mini-card">
+                <h4>Tokoh inti</h4>
+                <div class="person-list">
+                  <div class="person"><strong>Karl Marx</strong><span>Konflik kelas, borjuis vs proletar</span></div>
+                  <div class="person"><strong>Ralf Dahrendorf</strong><span>Ketimpangan otoritas dan kewenangan</span></div>
+                  <div class="person"><strong>Lewis A. Coser</strong><span>Fungsi konflik dalam perubahan sosial</span></div>
+                </div>
+              </aside>
+            </div>
+          </div>
+
+          <div class="tab-panel" id="simbolik" role="tabpanel">
+            <div class="tab-panel-grid">
+              <article>
+                <h3>Interaksionisme Simbolik</h3>
+                <p class="lead-copy">Interaksionisme simbolik merupakan perspektif yang menekankan bahwa kehidupan sosial terbentuk melalui interaksi manusia dan proses pemberian makna terhadap simbol. Teori ini terutama memperhatikan bagaimana individu memahami dirinya, orang lain, dan lingkungan sosial melalui proses interaksi.</p>
+                <ul>
+                  <li>Tokoh utama yang berkaitan dengan perkembangan teori ini adalah George Herbert Mead dan Herbert Blumer. Pemikiran Mead kemudian dikembangkan Blumer menjadi perspektif yang lebih sistematis.</li>
+                  <li>Blumer merumuskan tiga premis utama. Pertama, manusia bertindak terhadap sesuatu berdasarkan makna yang dimiliki sesuatu tersebut. Kedua, makna tersebut muncul melalui interaksi sosial. Ketiga, makna tersebut dapat berubah melalui proses interpretasi individu.</li>
+                  <li>Pemikiran Mead dapat dijelaskan melalui tiga konsep, yaitu mind, self, dan society. Mind berkaitan dengan kemampuan manusia menggunakan simbol dan bahasa untuk berpikir serta memahami lingkungan sosial. Self adalah kemampuan individu melihat dirinya sendiri melalui perspektif orang lain. Society terbentuk melalui proses interaksi sosial dan penggunaan simbol yang memiliki makna bersama.</li>
+                  <li>Dalam politik, perspektif ini sangat menarik karena politik bukan hanya tentang institusi dan struktur, tetapi juga tentang simbol dan makna. Bendera, lambang negara, pakaian politik, slogan, pidato, gestur politik, foto tokoh, istilah “rakyat”, “perubahan”, dan “demokrasi” merupakan contoh simbol yang dapat memiliki makna berbeda bagi kelompok masyarakat yang berbeda.</li>
+                  <li>Interaksionisme simbolik juga sangat relevan dalam era media sosial. Politisi membangun citra melalui Instagram, TikTok, YouTube, X, Facebook, foto, video, meme, emoji, slogan, dan hashtag. Dengan perspektif ini, seorang politisi tidak hanya dianalisis berdasarkan kebijakannya, tetapi juga berdasarkan bagaimana masyarakat memaknai citra dan simbol yang ditampilkan.</li>
+                </ul>
+              </article>
+              <aside class="mini-card">
+                <h4>Tokoh inti</h4>
+                <div class="person-list">
+                  <div class="person"><strong>George Herbert Mead</strong><span>Mind, Self, dan Society</span></div>
+                  <div class="person"><strong>Herbert Blumer</strong><span>Tiga premis interaksionisme simbolik</span></div>
+                  <div class="person"><strong>Mind, Self, Society</strong><span>Makna simbol dalam interaksi sosial</span></div>
+                </div>
+              </aside>
+            </div>
+          </div>
+
+          <div class="tab-panel" id="postkolonial" role="tabpanel">
+            <div class="tab-panel-grid">
+              <article>
+                <h3>Teori Postkolonial</h3>
+                <p class="lead-copy">Teori postkolonial merupakan perspektif yang digunakan untuk memahami warisan kolonialisme dan keberlanjutan relasi kekuasaan kolonial dalam kehidupan sosial, politik, ekonomi, budaya, dan pengetahuan. Postkolonial tidak sekadar berarti “masa setelah penjajahan”. Perspektif ini juga mengkaji bagaimana kolonialisme meninggalkan warisan berupa ketimpangan, stereotip, dominasi budaya, marginalisasi, dan cara pandang tertentu terhadap masyarakat bekas jajahan. Badan Bahasa menjelaskan bahwa kajian postkolonial berkaitan dengan masyarakat bekas jajahan dan juga mengkritik imperialisme, orientalisme, rasisme, serta berbagai bentuk hegemoni.</p>
+                <ul>
+                  <li>Dalam perkembangan teori postkolonial, tokoh yang sangat penting antara lain Frantz Fanon, Edward W. Said, Homi K. Bhabha, dan Gayatri Chakravorty Spivak.</li>
+                  <li>Fanon memberikan perhatian besar pada dampak psikologis dan sosial kolonialisme. Kolonialisme tidak hanya menguasai wilayah dan sumber daya, tetapi juga dapat membentuk kesadaran, identitas, dan persepsi diri masyarakat yang dijajah. Konsep penting Fanon antara lain alienasi, inferioritas, kekerasan kolonial, identitas, dan dekolonisasi. Fanon menekankan pentingnya dekolonisasi, bukan hanya dalam arti kemerdekaan politik tetapi juga pembebasan kesadaran dari warisan kolonial.</li>
+                  <li>Edward Said merupakan salah satu tokoh paling berpengaruh dalam teori postkolonial. Bukunya Orientalism (1978) menjadi tonggak penting kajian postkolonial. Said menganalisis hubungan antara pengetahuan dan kekuasaan, terutama bagaimana Barat membangun representasi tentang Timur. Konsep utamanya adalah orientalisme. Secara sederhana, orientalisme menjelaskan bagaimana “Timur” sering direpresentasikan oleh “Barat” sebagai eksotis, terbelakang, irasional, tidak modern, berbeda, dan membutuhkan pembinaan dari Barat. Representasi tersebut bukan sekadar gambaran netral, tetapi dapat menjadi bagian dari wacana kekuasaan.</li>
+                  <li>Bhabha memperkenalkan sejumlah konsep penting, antara lain hybridity (hibriditas), mimicry (mimikri), ambivalence (ambivalensi), dan third space (ruang ketiga). Hibriditas menunjukkan bahwa identitas budaya tidak selalu murni atau tunggal. Interaksi antara budaya kolonial dan budaya lokal dapat menghasilkan identitas baru. Mimikri menggambarkan proses ketika masyarakat terjajah meniru bahasa, perilaku, gaya hidup, atau nilai penjajah, tetapi hasilnya tidak pernah benar-benar identik dengan budaya penjajah.</li>
+                  <li>Spivak dikenal terutama melalui konsep subaltern. Subaltern mengacu pada kelompok yang berada dalam posisi subordinat dan mengalami keterbatasan dalam menyuarakan kepentingannya dalam struktur kekuasaan dominan. Perspektif Spivak mengajak kita bertanya: Siapa yang dapat berbicara? Siapa yang didengar? Siapa yang menentukan narasi? Siapa yang tidak memiliki ruang untuk menyampaikan pengalaman? Konsep ini relevan untuk menganalisis kelompok masyarakat yang termarginalisasi secara politik, sosial, ekonomi, maupun budaya.</li>
+                </ul>
+              </article>
+              <aside class="mini-card">
+                <h4>Tokoh inti</h4>
+                <div class="person-list">
+                  <div class="person"><strong>Frantz Fanon</strong><span>Alienasi, dekolonisasi, dan identitas</span></div>
+                  <div class="person"><strong>Edward W. Said</strong><span>Orientalisme dan representasi kekuasaan</span></div>
+                  <div class="person"><strong>Homi K. Bhabha</strong><span>Hibriditas, mimikri, dan ruang ketiga</span></div>
+                  <div class="person"><strong>Gayatri Chakravorty Spivak</strong><span>Subaltern dan suara yang terpinggirkan</span></div>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="comparison" id="perbandingan">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Perbandingan teori</h2>
+          <p>Setiap teori memiliki fokus, tokoh, dan pertanyaan kunci yang berbeda tetapi saling melengkapi dalam menganalisis fenomena politik.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Teori</th>
+                <th>Fokus utama</th>
+                <th>Tokoh</th>
+                <th>Pertanyaan kunci</th>
+                <th>Aplikasi politik</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Fungsionalisme</strong></td>
+                <td>Keteraturan dan fungsi sosial</td>
+                <td>Durkheim, Parsons, Merton</td>
+                <td>Bagaimana sistem dapat berjalan dan bertahan?</td>
+                <td>Negara, lembaga politik, pemilu, birokrasi</td>
+              </tr>
+              <tr>
+                <td><strong>Konflik</strong></td>
+                <td>Kekuasaan dan ketimpangan</td>
+                <td>Marx, Dahrendorf, Coser</td>
+                <td>Siapa yang menguasai dan siapa yang dikuasai?</td>
+                <td>Konflik elite, kelas, gerakan sosial, kebijakan</td>
+              </tr>
+              <tr>
+                <td><strong>Interaksionisme Simbolik</strong></td>
+                <td>Makna dan interaksi</td>
+                <td>Mead, Blumer</td>
+                <td>Bagaimana individu memberi makna terhadap realitas politik?</td>
+                <td>Kampanye, simbol, identitas, komunikasi politik</td>
+              </tr>
+              <tr>
+                <td><strong>Postkolonial</strong></td>
+                <td>Kolonialisme dan warisan kekuasaan</td>
+                <td>Fanon, Said, Bhabha, Spivak</td>
+                <td>Bagaimana warisan kolonial membentuk kekuasaan dan identitas?</td>
+                <td>Negara pascakolonial, marginalisasi, hegemoni</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="comparison" id="hubungan">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Analisis kasus: Pemilu</h2>
+          <p>Fenomena politik seperti pemilu dapat dipahami dari berbagai sudut pandang sekaligus.</p>
+        </div>
+
+        <div class="case-grid">
+          <article class="case-card">
+            <span class="tag">Fungsionalisme</span>
+            <h3>Fungsi pemilu</h3>
+            <p>Fungsionalisme bertanya: Apa fungsi pemilu bagi keberlangsungan sistem politik? Pemilu dipahami sebagai mekanisme untuk menjaga legitimasi, merekrut pemimpin, dan menjaga stabilitas politik.</p>
+          </article>
+          <article class="case-card">
+            <span class="tag">Konflik</span>
+            <h3>Distribusi kekuasaan</h3>
+            <p>Teori konflik bertanya: Kelompok mana yang memiliki sumber daya dan kekuasaan lebih besar dalam pemilu? Perspektif ini melihat pemilu sebagai arena pertarungan kepentingan dan distribusi kekuasaan.</p>
+          </article>
+          <article class="case-card">
+            <span class="tag">Simbolik</span>
+            <h3>Makna simbol</h3>
+            <p>Interaksionisme simbolik bertanya: Bagaimana pemilih memberikan makna terhadap kandidat, slogan, simbol, dan kampanye? Perspektif ini menekankan bahwa politik tidak hanya soal kebijakan, tetapi juga tentang interpretasi masyarakat.</p>
+          </article>
+          <article class="case-card">
+            <span class="tag">Postkolonial</span>
+            <h3>Warisan kolonial</h3>
+            <p>Teori postkolonial bertanya: Apakah sistem, wacana, dan praktik politik tersebut masih membawa warisan kolonial atau bentuk dominasi tertentu? Dengan demikian, satu fenomena politik dapat dipahami melalui empat perspektif yang berbeda.</p>
+          </article>
+        </div>
+
+    <section id="pemahaman">
+      <div class="wrap">
+        <div class="quiz-box">
+          <div>
+            <div class="eyebrow" style="margin-bottom: 10px;">Pemahaman Materi</div>
+            <h3>Hubungan keempat teori dengan sosiologi politik</h3>
+            <p>Keempat teori tersebut saling berkaitan dengan sosiologi politik karena semuanya membahas bagaimana masyarakat membentuk, menerima, menolak, dan mempertahankan kekuasaan dalam kehidupan sosial. Fungsionalisme menjelaskan stabilitas lembaga politik, konflik menyoroti perebutan kekuasaan, interaksionisme simbolik menelaah makna dan identitas politik, sedangkan postkolonial mengkritisi warisan kolonial yang masih membentuk relasi kekuasaan. Dalam praktiknya, analisis politik tidak hanya melihat struktur negara, tetapi juga hubungan antar kelompok, simbol, dan sejarah kolonial.</p>
+            <div class="quiz-questions" style="margin-top: 20px;">
+              <ul class="resource-list" style="list-style: disc; padding-left: 20px; margin: 0;">
+                <li><strong>Fungsionalisme:</strong> Menjelaskan bagaimana lembaga politik menjalankan fungsi stabilisasi, legitimasi, dan integrasi sosial. Kelebihan: mampu menjelaskan keteraturan dan fungsi institusi. Kelemahan: cenderung mengabaikan konflik, ketimpangan, dan perubahan yang bersumber dari kepentingan kelas atau dominasi.</li>
+                <li><strong>Konflik:</strong> Menjelaskan bahwa politik pada dasarnya adalah arena perebutan kekuasaan, sumber daya, dan pengaruh. Kelebihan: sangat efektif untuk mengungkap ketimpangan dan dominasi sosial. Kelemahan: sering terkesan terlalu menekankan pertentangan dan kurang memberi ruang pada konsensus atau stabilitas.</li>
+                <li><strong>Interaksionisme simbolik:</strong> Menjelaskan bahwa politik terbentuk melalui simbol, bahasa, identitas, dan interpretasi masyarakat. Kelebihan: membantu memahami kampanye, citra politik, dan makna simbol. Kelemahan: kurang menekankan struktur kekuasaan yang besar dan institusi formal.</li>
+                <li><strong>Postkolonial:</strong> Menjelaskan bagaimana warisan kolonial masih memengaruhi kekuasaan, identitas, dan wacana politik di negara bekas jajahan. Kelebihan: kuat untuk mengkritisi hegemoni dan representasi. Kelemahan: analisisnya dapat terasa lebih konseptual dan kurang langsung pada mekanisme kekuasaan sehari-hari.</li>
+              </ul>
+            </div>
+            <p style="margin-top: 18px;">Singkatnya, keempat teori ini saling melengkapi: fungsionalisme menjelaskan struktur, konflik menjelaskan pertentangan, interaksionisme simbolik menjelaskan makna, dan postkolonial menjelaskan warisan sejarah. Kelebihan gabungan ini membuat sosiologi politik mampu memahami fenomena politik secara multidimensi, sementara kelemahannya adalah sulitnya satu teori saja yang mampu menjelaskan seluruh realitas politik secara utuh.</p>
+          </div>
+
+          <aside class="result-card" aria-live="polite">
+            <strong>Ringkasan inti</strong>
+            <p>Fenomena politik tidak dapat dijelaskan dengan satu paradigma saja. Fungsionalisme, konflik, interaksionisme simbolik, dan postkolonial saling melengkapi dalam memahami struktur, dinamika, dan makna kekuasaan.</p>
+            <ul class="resource-list">
+              <li><strong>Fungsionalisme:</strong> menekankan keteraturan sosial dan legitimasi lembaga.</li>
+              <li><strong>Konflik:</strong> menekankan distribusi kekuasaan dan pertentangan kepentingan.</li>
+              <li><strong>Interaksionisme simbolik:</strong> menekankan makna komunikasi dan identitas politik.</li>
+              <li><strong>Postkolonial:</strong> menekankan warisan kolonial dan hegemoni budaya.</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© 2026 | Sosiologi Politik</span>
+      <span>Materi interaktif berbasis teori sosial-politik</span>
+    </div>
+  </footer>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const panels = document.querySelectorAll('.tab-panel');
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.target;
+        tabs.forEach((item) => {
+          const active = item === tab;
+          item.classList.toggle('is-active', active);
+          item.setAttribute('aria-selected', active);
+        });
+
+        panels.forEach((panel) => {
+          panel.classList.toggle('is-active', panel.id === target);
+        });
+      });
+    });
+
+
+  </script>
+</body>
+</html>
